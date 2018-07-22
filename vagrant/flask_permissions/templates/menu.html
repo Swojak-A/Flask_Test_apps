@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{restaurant}}</title>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-2">
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>{{restaurant}}</h1>
+                    <h2>Menu:</h2>
+
+                    <!--MESSAGE FLASHING -->
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+
+                    <ul>
+                    {% for message in messages %}
+                      <li><strong>{{message}}</strong></li>
+                      {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% endwith %}
+                </div>
+
+            </div>
+
+            <!-- MAIN CONTENT -->
+            <div class="row">
+                {% for i in menu_items %}
+                <!-- {% if menu_items[i]["restaurant_id"] == restaurant_id %} -->
+
+                <div class="col-12">
+                    <h4>{{menu_items[i]["name"]}}</h4>
+                    <p>{{menu_items[i]["description"]}}</p>
+                    <p>{{menu_items[i]["price"]}}
+
+                    <a href='{{url_for("editMenuItem", restaurant_id=menu_items[i]["restaurant_id"], menu_id=i)}}'>Edit</a>
+                    <a href='{{url_for("deleteMenuItem", restaurant_id=menu_items[i]["restaurant_id"], menu_id=i)}}'>Delete</a></p><br/>
+
+                    </p>
+                </div>
+                <!-- {% endif %} -->
+                {% endfor %}
+            </div>
+
+
+    </body>
+</html>

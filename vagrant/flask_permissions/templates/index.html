@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MenuApp</title>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta charset="utf-8">
+
+        <!-- description: to do -->
+        <meta description="still i'll have to fill this up">
+
+        <!-- favicon: to do -->
+        <link rel="icon" type="image/gif" href="">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-2">
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+
+    </head>
+    <body>
+
+            <!-- MAIN HEADER -->
+        <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>MenuApp</h1>
+                    <h2>The most popular App for browsing restaurant menus.</h2>
+                    <p>Some more text maybe some lorem ipsum dolor sit amet, and some more text.</p>
+                </div>
+            </div>
+        </div>
+        </div>
+
+            <!-- SPECIAL OFFER -->
+
+            <!-- MAIN CONTENT -->
+        <div class="container">
+            <div class="row">
+                {% for i in restaurants %}
+
+                <div class="col-12">
+                    <h4>{{restaurants[i]}}</h4>
+
+                    <a href='{{url_for("restaurantMenu", restaurant_id=i)}}'>Find out more</a>
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+
+    </body>
+</html>

@@ -9,7 +9,7 @@ from flask import Flask, request, render_template, flash, redirect, url_for
 from flask_babelex import Babel
 from flask_sqlalchemy import SQLAlchemy
 from flask_user import current_user, login_required, roles_required, UserManager, UserMixin
-
+from pass_file import mail_pass, mail_address
 
 # Class-based application configuration
 class ConfigClass(object):
@@ -27,8 +27,8 @@ class ConfigClass(object):
     MAIL_PORT = 465
     MAIL_USE_SSL = True
     MAIL_USE_TLS = False
-    MAIL_USERNAME = 'online.menu.071@gmail.com'
-    MAIL_PASSWORD = 'Misutsuruzu1'
+    MAIL_USERNAME = mail_address
+    MAIL_PASSWORD = mail_pass
     MAIL_DEFAULT_SENDER = '"Online Menu" <online.menu.071@gmail.com>'
 
     # Flask-User settings

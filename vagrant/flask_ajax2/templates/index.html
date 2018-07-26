@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="/static/css/style.css" rel="stylesheet">
+
+</head>
+<body>
+
+	<div class="container">
+		<br><br>
+		<form class="form-inline">
+			<div class="form-group dropdown-show">
+		    <input type="text" class="form-control dropdown-toggle" id="user-column" data-toggle="dropdown" name="column" id="user-column" aria-haspopup="true" aria-expanded="false">
+
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+			    <a class="dropdown-item" href="#" id="drop-name">Name</a>
+			    <a class="dropdown-item" href="#" id="drop-lat-name">Latin Name</a>
+			    <a class="dropdown-item" href="#" id="drop-type">Type</a>
+			    <a class="dropdown-item" href="#" id="drop-edible">Edible</a>
+			    <a class="dropdown-item" href="#" id="drop-poisonous">Poisonous</a>
+			  </div>
+		  </div>
+		  <div class="form-group">
+		    <input type="text" class="form-control" name="input" id="user-input" placeholder="Your input">
+		  </div>
+		  <button class="btn btn-default" id="search-btn">Search</button>
+		</form>
+	</div>
+
+	<div class="container">
+		<div class="row" id="results">
+
+		</div>
+	</div>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+
+	<script src="{{ url_for('static', filename='js/search.js') }}"></script>
+
+
+</body>
+</html>

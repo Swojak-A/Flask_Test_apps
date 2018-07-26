@@ -1,0 +1,12 @@
+{% for item in items %}
+	<div class="col-12 bg-light item-card">
+		<h3 class="text-uppercase">{{item.name}}</h3>
+		<p class="font-weight-light font-italic">{{item.lat_name}}</p>
+		<p>type: {{item.type}}</p>
+		{% if item.edible == True %}
+		<p><span class="text-success">Edible</span></p>
+		{% else %}
+		<p><span class="text-danger">Poisonous</span></p>
+		{% endif %}
+	</div>
+{% endfor %}

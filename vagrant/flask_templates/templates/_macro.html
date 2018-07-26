@@ -1,0 +1,12 @@
+{% macro test() %}
+	<p>taki tam test</p>
+{% endmacro %}
+
+{% macro test2(param) %}
+	{% if param==True %}
+		<p>no i działa</p>
+	{% else %}
+		<p>a taki chuj</p>
+	{% endif %}
+{% endmacro %}
+

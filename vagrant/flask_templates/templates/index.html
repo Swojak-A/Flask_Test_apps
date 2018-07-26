@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% from '_macro.html' import test2 %}
+
+{% block head %}
+	<head>Tytuł strony</head>
+{% endblock %}
+
+{% block content %}
+	<h1>tytuł h1</h1>
+	{{ test2(param=False) }}
+{% endblock %}
